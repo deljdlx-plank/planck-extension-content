@@ -1,0 +1,28 @@
+
+
+.plk-image-detail-container
+{
+    margin: 16px;
+}
+
+.plk-image-detail-toolbar {
+    border: solid 1px #AAA;
+    background-color:#DDD;
+}
+
+.plk-image-detail-layout {
+
+    display: flex;
+}
+
+
+
+.plk-image-detail-info {
+    margin-left: 16px;
+    flex:1;
+}
+
+.plk-image-detail-preview img {
+    border: solid 2px #AAA;
+}
+
