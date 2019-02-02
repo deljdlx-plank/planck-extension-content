@@ -21,7 +21,6 @@ class Main extends Router
 
         $this->get('list', '`/images`', function() {
 
-
             /*
             $javascriptBootstrap = $this->getLocalJavascriptFile(
                 $this->router->getExtension()->getJavascriptsFilepath().'/bootstrap/imageList.js'
@@ -46,6 +45,7 @@ class Main extends Router
 
         })->html()
         ->setBuilder('/images')
+
         ;
 
 
