@@ -1,4 +1,4 @@
-Planck.Extension.Content.Module.Image.View.Component.ImageDetail = function(container)
+Planck.Extension.Content.Module.Image.View.Component.Detail = function(container)
 {
     if(container) {
         this.setElement(container);
@@ -22,25 +22,25 @@ Planck.Extension.Content.Module.Image.View.Component.ImageDetail = function(cont
     };
 };
 
-Planck.Extension.Content.Module.Image.View.Component.ImageDetail.prototype.image;
+Planck.Extension.Content.Module.Image.View.Component.Detail.prototype.image;
 
 
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageDetail.prototype.getRemoteCallInstance = function()
+Planck.Extension.Content.Module.Image.View.Component.Detail.prototype.getRemoteCallInstance = function()
 {
     return this.parent.getRemoteCallInstance.call(this,
-        'Planck.Extension.Content.Module.Image.View.Component.ImageDetail'
+        'Planck.Extension.Content.Module.Image.View.Component.Detail'
     );
 };
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageDetail.prototype.getViewFromRemote = function(callback)
+Planck.Extension.Content.Module.Image.View.Component.Detail.prototype.getViewFromRemote = function(callback)
 {
     this.parent.getViewFromRemote.call(
         this,
 
-        'Planck.Extension.Content.Module.Image.View.Component.ImageDetail',
+        'Planck.Extension.Content.Module.Image.View.Component.Detail',
         null,
         function(descriptor) {
             this.initializeCropper();
@@ -56,7 +56,7 @@ Planck.Extension.Content.Module.Image.View.Component.ImageDetail.prototype.getVi
 };
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageDetail.prototype.initializeCropper = function()
+Planck.Extension.Content.Module.Image.View.Component.Detail.prototype.initializeCropper = function()
 {
 
     var image = this.$element.find('.plk-image-detail-preview img').get(0);
@@ -76,7 +76,7 @@ Planck.Extension.Content.Module.Image.View.Component.ImageDetail.prototype.initi
 };
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageDetail.prototype.initializeForm = function()
+Planck.Extension.Content.Module.Image.View.Component.Detail.prototype.initializeForm = function()
 {
 
 
@@ -98,7 +98,7 @@ Planck.Extension.Content.Module.Image.View.Component.ImageDetail.prototype.initi
     }.bind(this));
 };
 
-Planck.Extension.Content.Module.Image.View.Component.ImageDetail.prototype.getCropData = function()
+Planck.Extension.Content.Module.Image.View.Component.Detail.prototype.getCropData = function()
 {
     return this.cropper.getData();
 };
@@ -106,7 +106,7 @@ Planck.Extension.Content.Module.Image.View.Component.ImageDetail.prototype.getCr
 
 
 Planck.inherit(
-    Planck.Extension.Content.Module.Image .View.Component.ImageDetail,
+    Planck.Extension.Content.Module.Image .View.Component.Detail,
     Planck.Extension.ViewComponent.Component
 );
 

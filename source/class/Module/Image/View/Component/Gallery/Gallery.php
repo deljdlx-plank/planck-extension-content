@@ -7,7 +7,7 @@ use Planck\Model\Dataset;
 
 
 
-class ImageList extends JavascriptComponent
+class Gallery extends JavascriptComponent
 {
 
 
@@ -20,10 +20,11 @@ class ImageList extends JavascriptComponent
         $this->addCSSClass('plk-image-list');
 
 
-        $javascriptBootstrap = $this->getLocalJavascriptFile(
-            $this->getExtension()->getJavascriptsFilepath().'/bootstrap/imageList.js'
-        );
 
+
+        $javascriptBootstrap = $this->getLocalJavascriptFile(
+            $this->getExtension()->getJavascriptsFilepath().'/bootstrap/Gallery.js'
+        );
         $this->addJavascriptFile(
             $javascriptBootstrap
         );

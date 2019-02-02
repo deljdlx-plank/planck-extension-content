@@ -1,4 +1,4 @@
-Planck.Extension.Content.Module.Image.Controller.List = function()
+Planck.Extension.Content.Module.Image.Controller.Gallery = function()
 {
     this.$element = $('.plk-image-list');
 
@@ -10,7 +10,7 @@ Planck.Extension.Content.Module.Image.Controller.List = function()
 
 };
 
-Planck.Extension.Content.Module.Image.Controller.List.prototype.initialize = function()
+Planck.Extension.Content.Module.Image.Controller.Gallery.prototype.initialize = function()
 {
     Planck.Controller.prototype.initialize.call(this);
 
@@ -21,7 +21,7 @@ Planck.Extension.Content.Module.Image.Controller.List.prototype.initialize = fun
 
 
 Planck.inherit(
-    Planck.Extension.Content.Module.Image.Controller.List,
+    Planck.Extension.Content.Module.Image.Controller.Gallery,
     Planck.Controller
 );
 

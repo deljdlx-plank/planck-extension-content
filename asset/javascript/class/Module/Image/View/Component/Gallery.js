@@ -1,4 +1,4 @@
-Planck.Extension.Content.Module.Image.View.Component.ImageList = function(container)
+Planck.Extension.Content.Module.Image.View.Component.Gallery = function(container)
 {
     if(container) {
         this.setElement(container);
@@ -32,14 +32,14 @@ Planck.Extension.Content.Module.Image.View.Component.ImageList = function(contai
 };
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.on = function(eventName, callback)
+Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.on = function(eventName, callback)
 {
    this.events[eventName] = callback;
    return this;
 };
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.initialize = function()
+Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.initialize = function()
 {
 
     this.parent.initialize.call(this);
@@ -51,7 +51,7 @@ Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.initial
     }.bind(this));
 };
 
-Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.initializeThumbnail = function(thumbnail)
+Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.initializeThumbnail = function(thumbnail)
 {
     thumbnail.onClick(function(thumbnail) {
         this.events.thumbnailClick(thumbnail);
@@ -62,9 +62,9 @@ Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.initial
 
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.getRemoteCallInstance = function()
+Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.getRemoteCallInstance = function()
 {
-    var remoteCall = new Planck.Extension.ViewComponent.ComponentRemoteCall('Planck.Extension.Content.Module.Image.View.Component.ImageList');
+    var remoteCall = new Planck.Extension.ViewComponent.ComponentRemoteCall('Planck.Extension.Content.Module.Image.View.Component.Gallery');
     remoteCall.addData('dataLayer', this.getDataLayer().serialize());
     return remoteCall;
 
@@ -74,11 +74,11 @@ Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.getRemo
 
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.getViewFromRemote = function(callback)
+Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.getViewFromRemote = function(callback)
 {
 
     this.parent.getViewFromRemote.call(this,
-        'Planck.Extension.Content.Module.Image.View.Component.ImageList',
+        'Planck.Extension.Content.Module.Image.View.Component.Gallery',
         null,
 
         function(descriptor) {
@@ -98,11 +98,11 @@ Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.getView
 
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.showImageDetails = function(thumbnail)
+Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.showImageDetails = function(thumbnail)
 {
 
 
-    var imageDetail = new Planck.Extension.Content.Module.Image.View.Component.ImageDetail();
+    var imageDetail = new Planck.Extension.Content.Module.Image.View.Component.Detail();
 
 
     imageDetail.setDataLayer(thumbnail.getDataLayer());
@@ -122,7 +122,7 @@ Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.showIma
 
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.addThumbnail = function(dataLayer)
+Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.addThumbnail = function(dataLayer)
 {
     var thumbnail = new Planck.Extension.Content.Module.Image.View.Component.Thumbnail();
 
@@ -140,7 +140,7 @@ Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.addThum
 };
 
 
-Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.initializeDropImageUpload = function()
+Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.initializeDropImageUpload = function()
 {
 
 
@@ -200,7 +200,7 @@ Planck.Extension.Content.Module.Image.View.Component.ImageList.prototype.initial
 
 
 Planck.inherit(
-    Planck.Extension.Content.Module.Image .View.Component.ImageList,
+    Planck.Extension.Content.Module.Image .View.Component.Gallery,
     Planck.Extension.ViewComponent.Component
 );
 

@@ -7,7 +7,7 @@ use Planck\Extension\ViewComponent\View\Component\JavascriptComponent;
 
 
 
-class ImageDetail extends JavascriptComponent
+class Detail extends JavascriptComponent
 {
 
 

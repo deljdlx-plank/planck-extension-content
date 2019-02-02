@@ -5,7 +5,7 @@ namespace Planck\Extension\Content\Module\Image\Router;
 
 
 
-use Planck\Extension\Content\Module\Image\View\Component\ImageList;
+use Planck\Extension\Content\Module\Image\View\Component\Gallery;
 use Planck\Router;
 
 
@@ -33,7 +33,7 @@ class Main extends Router
             )->getAll();
 
 
-            $view = new ImageList();
+            $view = new Gallery();
             $view->setImages($images);
             $output = $view->render();
 
