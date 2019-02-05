@@ -70,6 +70,7 @@ Planck.Extension.Content.Module.Image.View.Component.Thumbnail.prototype.getView
     return this.parent.getViewFromRemote.call(
         this,
         'Planck.Extension.Content.Module.Image.View.Component.Thumbnail',
+        null,
         callback
     );
 };

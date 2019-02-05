@@ -6,11 +6,6 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery = function(containe
         this.loadDataLayerFromDom();
     }
 
-    this.services = {
-       uploadImage: {
-           url:'?/content/image/api/upload'
-       }
-    };
 
 
     this.events = {
@@ -124,6 +119,7 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.showImage
 
 Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.addThumbnail = function(dataLayer)
 {
+
     var thumbnail = new Planck.Extension.Content.Module.Image.View.Component.Thumbnail();
 
 
@@ -135,6 +131,7 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.addThumbn
             this.$contentElement.append(thumbnail.getElement());
             this.thumbnails.push(thumbnail);
             this.initializeThumbnail(thumbnail);
+
         }.bind(this)
     );
 };
@@ -143,57 +140,20 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.addThumbn
 Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.initializeDropImageUpload = function()
 {
 
+    var imageDropZone = new Planck.Extension.Content.Module.Image .View.Component.DropZone(this.$element);
+    imageDropZone.on('upload', function(datalayer) {
 
-    this.$element.on("dragover", function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        $(this).addClass('dragging');
-    });
+        $(datalayer).each(function(index, dataLayerRecord) {
+            var dataLayer = {
+                image: dataLayerRecord
+            };
 
-    this.$element.on("dragleave", function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        $(this).removeClass('dragging');
-    });
+            this.addThumbnail(dataLayer);
+        }.bind(this));
 
-    this.$element.on("drop", function(event) {
-
-
-        var originalEvent = event.originalEvent;
-
-        var url = this.services.uploadImage.url;
-
-        for(var i = 0 ; i<originalEvent.dataTransfer.items.length; i++) {
-            var type = originalEvent.dataTransfer.items[i].kind;
-
-            console.log('penser à customiser upload en fct du type '+type);
-
-            if(type === 'file') {
-                var file = originalEvent.dataTransfer.items[i].getAsFile();
-
-                var uploader = new Planck.FileUploader(file);
-
-                uploader.send(url, function(datalayer) {
-
-                    $(datalayer).each(function(index, dataLayerRecord) {
-
-                        var dataLayer = {
-                            image: dataLayerRecord
-                        };
-
-                        this.addThumbnail(dataLayer);
-                    }.bind(this));
-
-                }.bind(this));
-
-            }
-        }
-
-
-
-        event.preventDefault();
-        event.stopPropagation();
     }.bind(this));
+
+
 
 };
 

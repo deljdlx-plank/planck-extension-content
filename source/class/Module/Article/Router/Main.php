@@ -8,7 +8,7 @@ use Phi\HTML\JavascriptFile;
 use Planck\Router;
 use Planck\Extension\Content\Model\Entity\Article;
 use Planck\Extension\Content\Module\Article\View\Component\ArticleEditor;
-use Planck\Extension\Content\Module\Article\View\Component\ArticleList;
+use Planck\Extension\Content\Module\Article\View\Component\Listing;
 
 
 class Main extends Router
@@ -47,9 +47,9 @@ class Main extends Router
                 $article = $this->application->getModel()->getEntity(Article::class);
                 $article->loadById($articleId);
                 $component->setArticle($article);
-
             }
             echo $component->render();
+
         })->html()
         ->setBuilder(function($articleId = false) {
             $url = '/content/article/edit';
@@ -67,7 +67,7 @@ class Main extends Router
             $articles = $this->application->getModel()->getRepository(
                 \Planck\Extension\Content\Model\Repository\Article::class
             )->getAll();
-            $view = new ArticleList();
+            $view = new Listing();
             $view->setArticles($articles);
             echo $view->render();
         })->html()

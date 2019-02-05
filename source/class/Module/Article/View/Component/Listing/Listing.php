@@ -7,7 +7,7 @@ use Planck\Model\Dataset;
 
 
 
-class ArticleList extends JavascriptComponent
+class Listing extends JavascriptComponent
 {
 
 
