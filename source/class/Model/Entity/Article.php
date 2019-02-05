@@ -16,6 +16,41 @@ class Article extends Entity
      */
     protected $image;
 
+    /**
+     * @var Author
+     */
+    protected $author;
+
+
+
+    public function getTitle()
+    {
+        return $this->getValue('title');
+    }
+
+
+    public function getAuthor()
+    {
+        $author = $this->getForeignEntity(
+            $this->author,
+            \Planck\Extension\Content\Model\Repository\Author::class,
+            'user_id'
+        );
+        return $author;
+    }
+
+
+
+
+
+    public function hasImage()
+    {
+        if($this->getValue('image_id')) {
+            return true;
+        }
+        return false;
+    }
+
 
     public function setImage(Image $image)
     {
