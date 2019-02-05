@@ -21,7 +21,6 @@ Planck.Extension.Content.Module.Image .View.Component.DropZone = function(contai
     this.$element = $(container);
 
 
-    /*
     this.$element.on("dragover", function(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -33,7 +32,7 @@ Planck.Extension.Content.Module.Image .View.Component.DropZone = function(contai
         event.stopPropagation();
         $(this).removeClass('dragging');
     });
-    */
+
 
 
 
