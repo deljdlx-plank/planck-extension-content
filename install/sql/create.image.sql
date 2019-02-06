@@ -1,4 +1,4 @@
-CREATE TABLE image
+CREATE TABLE content_image
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INT,

@@ -9,7 +9,7 @@ use Planck\Model\Repository;
 
 class Article extends Repository
 {
-    protected static $tableName = 'article';
+    protected static $tableName = 'content_article';
 
 
 

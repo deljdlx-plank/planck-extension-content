@@ -1,4 +1,4 @@
-CREATE TABLE article
+CREATE TABLE content_article
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INT,
@@ -10,5 +10,7 @@ CREATE TABLE article
     properties TEXT,
     creation_date DATETIME,
     update_date DATETIME,
-    image_id INT
+    image_id INT,
+    html TEXT,
+    category_id INT
 )

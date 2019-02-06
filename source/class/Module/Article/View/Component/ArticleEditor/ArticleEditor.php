@@ -13,6 +13,10 @@ class ArticleEditor extends  JavascriptComponent
     {
         parent::initialize();
 
+        $this->addJavascriptFile('vendor/jstree/dist/jstree.js');
+        $this->addCSSFile('vendor/jstree/dist/themes/default/style.css');
+
+
         $this->addCSSClass('plk-article-editor');
 
 

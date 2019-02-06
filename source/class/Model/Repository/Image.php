@@ -9,5 +9,5 @@ use Planck\Model\Repository;
 
 class Image extends Repository
 {
-    protected static $tableName = 'image';
+    protected static $tableName = 'content_image';
 }
