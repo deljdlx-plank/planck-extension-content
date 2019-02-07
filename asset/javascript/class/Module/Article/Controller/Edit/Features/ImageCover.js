@@ -1,17 +1,30 @@
-Planck.Extension.Content.Module.Article.Controller.Edit.Feature.ImageCover = function(editor)
+Planck.Extension.Content.Module.Article.Controller.Edit.Features.ImageCover = function(editor)
 {
     this.editor = editor;
-    this.$element = this.editor.getElement();
+    this.image = this.editor.getArticle().getImage();
 };
 
 
-Planck.Extension.Content.Module.Article.Controller.Edit.Feature.ImageCover.prototype.initialize = function()
+Planck.Extension.Content.Module.Article.Controller.Edit.Features.ImageCover.prototype.initialize = function()
 {
+
+    this.$element = this.getContainer('Image de couverture <i class="fas fa-edit main-image-trigger"></i>', 'image-preview');
+
+    if(this.image.getValue('url')) {
+
+        var image = $('<img src="'+this.image.getValue('url')+'" style="width:100%"/>');
+        var inputValue = $('<input name="image_id" class="form-data" style="display: none" value="'+this.image.getValue('id')+'"/>');
+        this.$element.find('.image-preview').append(image);
+        this.$element.find('.image-preview').append(inputValue);
+    }
+
+    this.register('imageCover');
+
     this.initializeChooseImage();
 };
 
 
-Planck.Extension.Content.Module.Article.Controller.Edit.Feature.ImageCover.prototype.initializeChooseImage = function()
+Planck.Extension.Content.Module.Article.Controller.Edit.Features.ImageCover.prototype.initializeChooseImage = function()
 {
 
     this.$element.find('.main-image-trigger').click(function(event) {
@@ -56,4 +69,27 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Feature.ImageCover.proto
         return false;
     }.bind(this));
 
-}
+};
+
+
+
+
+
+
+
+Planck.inherit(
+    Planck.Extension.Content.Module.Article.Controller.Edit.Features.ImageCover,
+    Planck.Extension.Content.Module.Article.Controller.Edit.Feature
+);
+
+
+
+
+
+
+
+
+
+
+
+

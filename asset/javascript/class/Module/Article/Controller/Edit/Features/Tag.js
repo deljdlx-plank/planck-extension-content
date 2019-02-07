@@ -1,4 +1,4 @@
-Planck.Extension.Content.Module.Article.Controller.Edit.Feature.Tag = function(editor)
+Planck.Extension.Content.Module.Article.Controller.Edit.Features.Tag = function(editor)
 {
     this.services = {
         tag: {
@@ -9,22 +9,15 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Feature.Tag = function(e
         }
     };
 
-
-
-
     this.editor = editor;
-    this.$element = this.editor.getElement();
     this.article = this.editor.getArticle();
 };
 
 
-Planck.Extension.Content.Module.Article.Controller.Edit.Feature.Tag.prototype.initialize = function()
+Planck.Extension.Content.Module.Article.Controller.Edit.Features.Tag.prototype.initialize = function()
 {
 
-    //this.getViewFromRemote('');
-
     var component = new Planck.Extension.ViewComponent.Component();
-
 
     var loader = component.getRemoteCallInstance('Planck\\Extension\\RichTag\\View\\Component\\EntityTagInput');
     loader.addMethodCall('loadEntityById', [
@@ -35,39 +28,25 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Feature.Tag.prototype.in
 
     loader.execute(function(response) {
 
-
-        var container = $(
-            //'<div class="col-12" style="min-height: 40px;">'+
-            '<div class="card">'+
-            '<div class="card-body">'+
-            '<div class="card-header">Tags</div>'+
-            '<div class="tag_input_container"></div>'+
-            '</div>'+
-            '</div>'
-            //'</div>'
-        );
-
-
-
-
         var tagInputElement = $(response.html);
 
-        container.find('.tag_input_container').append(tagInputElement);
-
-        $('.plk-layout-editor-zone-left').append(container);
+        this.$element = this.getContainer('Tags', 'tag_input_container');
+        this.$element.find('.tag_input_container').append(tagInputElement);
 
         this.$tagManager = new Planck.Extension.Redactor.View.FormElement.TagInput(tagInputElement);
         this.$tagManager.initialize();
 
         this.$tagManager.on('change', function(tagManager) {
             this.updateTags(tagManager);
-        }.bind(this))
+        }.bind(this));
+
+        this.register('tag');
 
     }.bind(this));
-
 };
 
-Planck.Extension.Content.Module.Article.Controller.Edit.Feature.Tag.prototype.updateTags = function()
+
+Planck.Extension.Content.Module.Article.Controller.Edit.Features.Tag.prototype.updateTags = function()
 {
     if(!this.article.getValue('id')) {
         return false;
@@ -85,9 +64,26 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Feature.Tag.prototype.up
 
         }.bind(this)
     });
-
-    console.log(data);
-
 };
+
+
+Planck.inherit(
+    Planck.Extension.Content.Module.Article.Controller.Edit.Features.Tag,
+    Planck.Extension.Content.Module.Article.Controller.Edit.Feature
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

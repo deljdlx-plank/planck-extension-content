@@ -38,11 +38,7 @@ class Main extends Router
             $this->response->addExtraData('resources', $assets);
 
 
-
-
             $component = new ArticleEditor();
-
-
             if($articleId = (int) $this->request->get('article')) {
                 $article = $this->application->getModel()->getEntity(Article::class);
                 $article->loadById($articleId);

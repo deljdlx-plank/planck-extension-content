@@ -24,7 +24,7 @@
                 <div class="col-12">
 
                     <?php
-                    $contentInput = new \Planck\Extension\ViewComponent\View\Element\RichTextInput();
+                    $contentInput = new \Planck\Extension\Redactor\View\Component\RichTextInput();
                     $contentInput->setValue($article->getValue('content'));
                     $contentInput->setName('content');
                     echo $contentInput->render();
@@ -35,57 +35,9 @@
 
 
         </div>
-        <div class="col-3 padding-x-small plk-layout-editor-zone-left">
-
-            <div class="row">
 
 
-                <div class="col-12 card">
-                    <div class="card-body">
-                        <div class="card-header">Actions</div>
-                        <div>
-                            <button>Enregistrer</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 card">
-                    <div class="card-body">
-                        <div class="card-header">Categorie</div>
-                        <div>
-                            <div class="category-container"></div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="col-12 card">
-                    <div class="card-body">
-                        <div class="card-header">Image principle <i class="fas fa-edit main-image-trigger"></i></div>
-                        <div>
-                            <div class="image-preview"><?php
-                                if($article->hasImage()) {
-                                    echo '<img src="'.$article->getImage()->getValue('url').'" style="width: 100%"/>';
-                                }
-                                ?>
-                            </div>
-                            <input name="image_id" class="form-data" style="display: none" value="<?php echo $article->getValue('image_id');?>"/>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
+        <div class="col-3 padding-x-small plk-layout-editor-zone-right"></div>
 
     </div>
 
