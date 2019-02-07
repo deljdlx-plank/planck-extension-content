@@ -46,7 +46,7 @@ Planck.Extension.Content.Module.Image.View.Component.Detail.prototype.getViewFro
             this.initializeCropper();
             this.initializeForm();
 
-            Planck.Extension.ViewComponent.initialize(this.getElement());
+            Planck.Extension.Redactor.initialize(this.getElement());
 
             if(callback) {
                 callback(descriptor);

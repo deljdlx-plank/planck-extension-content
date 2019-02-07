@@ -10,9 +10,7 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery = function(containe
 
     this.events = {
        thumbnailClick: function(thumbnail) {
-
             this.showImageDetails(thumbnail);
-            //this.getImageDetails();
        }.bind(this)
     };
 
@@ -140,7 +138,7 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.addThumbn
 Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.initializeDropImageUpload = function()
 {
 
-    var imageDropZone = new Planck.Extension.Content.Module.Image .View.Component.DropZone(this.$element);
+    var imageDropZone = new Planck.Component.DropZone(this.$element);
     imageDropZone.on('upload', function(datalayer) {
 
         $(datalayer).each(function(index, dataLayerRecord) {
