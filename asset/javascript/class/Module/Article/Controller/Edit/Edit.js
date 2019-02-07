@@ -5,9 +5,6 @@ Planck.Extension.Content.Module.Article.Controller.Edit = function(options)
 
     this.$element = $('.plk-article-editor');
 
-    this.modal = new Planck.Modal();
-    this.modal.initialize();
-
     this.article = new Planck.Extension.Content.Model.Entity.Article();
 
     this.options = $.extend({
