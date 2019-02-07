@@ -29,9 +29,11 @@ class Main extends Router
 
             $assets = $this->router->getAssets();
 
-            $javascriptBootstrap = $this->getLocalJavascriptFile(
-                $this->router->getExtension()->getJavascriptsFilepath().'/bootstrap/articleEdit.js'
-            );
+
+            $javascriptBootstrap = $this->router->getExtension()->getExtensionJavascript('/javascript/bootstrap/articleEdit.js');
+
+
+
             $assets[] = $javascriptBootstrap;
 
 

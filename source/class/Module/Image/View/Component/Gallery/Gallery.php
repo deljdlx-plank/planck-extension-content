@@ -22,9 +22,7 @@ class Gallery extends JavascriptComponent
 
 
 
-        $javascriptBootstrap = $this->getLocalJavascriptFile(
-            $this->getExtension()->getJavascriptsFilepath().'/bootstrap/Gallery.js'
-        );
+        $javascriptBootstrap = $this->getExtension()->getExtensionJavascript('/javascript/bootstrap/Gallery.js');
         $this->addJavascriptFile(
             $javascriptBootstrap
         );
