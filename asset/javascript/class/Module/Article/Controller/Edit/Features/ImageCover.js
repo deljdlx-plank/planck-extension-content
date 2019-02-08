@@ -43,11 +43,15 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.ImageCover.prot
 
 
             this.editor.getArticle().setValue('image_id', imageInstance.getId());
-            this.editor.getArticle().store();
 
             this.$element.find('.image-preview').html(
                 '<img src="'+imageInstance.getValue('url')+'" style="width:100%"/>'
             );
+
+
+            if(this.editor.getArticle().getValue('id')) {
+                this.editor.getArticle().store();
+            }
 
             overlay.destroy();
 

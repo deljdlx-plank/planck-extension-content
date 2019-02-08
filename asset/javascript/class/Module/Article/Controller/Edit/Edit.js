@@ -88,6 +88,11 @@ Planck.Extension.Content.Module.Article.Controller.Edit.prototype.initializeFeat
 
 
 
+    var qNameFeature = new Planck.Extension.Content.Module.Article.Controller.Edit.Features.QName(this);
+    qNameFeature.initialize();
+    this.loadFeature('qName', qNameFeature);
+
+
     var typeFeature = new Planck.Extension.Content.Module.Article.Controller.Edit.Features.Type(this);
     typeFeature.initialize();
     this.loadFeature('type', typeFeature);

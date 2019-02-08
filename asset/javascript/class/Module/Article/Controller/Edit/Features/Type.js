@@ -16,7 +16,7 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.Type.prototype.
 
     this.initializeTree();
 
-    this.register('category');
+    this.register('type');
 
 
 

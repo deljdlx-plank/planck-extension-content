@@ -30,9 +30,12 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.CommonAction.pr
     );
 
 
-    this.article.store(function(data) {
+    this.article.store(function(descriptor) {
 
-    });
+        console.log(this.article.getValues());
+        //this.article = descriptor.entity;
+
+    }.bind(this));
 
 };
 
