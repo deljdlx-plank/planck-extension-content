@@ -4,12 +4,11 @@ namespace Planck\Extension\Content\Model\Entity;
 
 
 use Planck\Extension\RichTag\Model\Traits\HasTags;
-use Planck\Model\Entity;
 use Planck\Model\GenericObjectProperty;
 use Planck\Model\Traits\HasImage;
 use Planck\Model\Traits\HasProperties;
 
-class Image extends Entity
+class Image extends Content
 {
     use HasTags;
     use HasProperties;

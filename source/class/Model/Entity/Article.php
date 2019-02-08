@@ -4,11 +4,15 @@ namespace Planck\Extension\Content\Model\Entity;
 
 
 
-use Planck\Model\Entity;
+use Planck\Extension\Model\Traits\IsPlanckEntity;
 use Planck\Model\Traits\HasProperties;
 
-class Article extends Entity
+
+
+class Article extends Content
 {
+
+    use IsPlanckEntity;
     use HasProperties;
 
     /**

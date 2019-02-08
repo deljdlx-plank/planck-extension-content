@@ -2,4 +2,9 @@
     display: inline-block;
     margin: 4px;
     border: solid 2px #AAA;
+
+    background-size: cover;
+    width: 100px;
+    height:100px;
+
 }

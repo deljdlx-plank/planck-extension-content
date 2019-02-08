@@ -41,7 +41,10 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.ImageCover.prot
 
             var imageInstance = thumbnail.getDataLayer().get('image');
 
-            this.$element.find('*[name=image_id]').val(imageInstance.getId());
+
+            this.editor.getArticle().setValue('image_id', imageInstance.getId());
+            this.editor.getArticle().store();
+
             this.$element.find('.image-preview').html(
                 '<img src="'+imageInstance.getValue('url')+'" style="width:100%"/>'
             );

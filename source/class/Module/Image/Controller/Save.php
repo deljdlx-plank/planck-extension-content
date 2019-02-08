@@ -4,6 +4,7 @@
 namespace Planck\Extension\Content\Module\Image\Controller;
 
 
+use Phi\HTTP\UploadedFile;
 use Planck\Controller;
 use Planck\Extension\Content\Model\Entity\Image;
 use Planck\Extension\Tool\ImageUploader;
@@ -19,7 +20,7 @@ class Save extends Controller
 
     public function initialize()
     {
-        $this->relativeImageFilepath = $this->getApplication()->get('user-data-filepath-root', array(false)) . '/entity/image';
+        $this->relativeImageFilepath = $this->getApplication()->get('user-data-filepath-root') . '/entity/image';
         $this->absoluteImageFilepath = $this->getApplication()->get('user-data-filepath-root') . '/entity/image';
 
         $this->imageURLRoot = $this->application->get('user-data-url-root', array(false)) . '/entity/image';
@@ -114,12 +115,13 @@ class Save extends Controller
     }
 
 
-    public function createByFile($file)
+    public function createByFile(UploadedFile $file)
     {
 
 
-        $temporaryImagePath = $file->saveIntoPath($this->getImageFilepath());
 
+
+        $temporaryImagePath = $file->saveIntoPath($this->getImageFilepath());
 
         $imageEntity = $this->application->getModelEntity(Image::class);
         $imageEntity->store(true);

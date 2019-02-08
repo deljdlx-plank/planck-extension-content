@@ -30,7 +30,8 @@ class Thumbnail extends JavascriptComponent
 
     public function getStyle()
     {
-        return 'height: 200px; width: 200px; '.$this->getImage()->getCSSCropProperties(200, 200).';';
+        return 'background-image: url('.$this->getVariable('image')->getValue('url').')';
+        //return 'height: 200px; width: 200px; '.$this->getImage()->getCSSCropProperties(200, 200).';';
     }
 
     public function getContent()
@@ -38,13 +39,7 @@ class Thumbnail extends JavascriptComponent
 
 
         $this->dom->html(
-            $this->obInclude(__DIR__.'/template.php', array_merge(
-                    $this->getVariables(),
-                    array(
-                        //'saveArticleURL' => $saveArticleURL,
-                    )
-                )
-            )
+            ''
         );
 
         $toolbar = $this->getToolbar();

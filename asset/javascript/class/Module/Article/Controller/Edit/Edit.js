@@ -22,8 +22,6 @@ Planck.Extension.Content.Module.Article.Controller.Edit = function(options)
         '.plk-layout-editor-zone-right'
     );
 
-
-
     this.features = {};
 };
 
@@ -48,15 +46,12 @@ Planck.Extension.Content.Module.Article.Controller.Edit.prototype.getArticle = f
 
 
 
-Planck.Extension.Content.Module.Article.Controller.Edit.prototype.loadFeature = function(featureName, featureInstance)
-{
-   this.features[featureName] = featureInstance;
-   return this;
-};
 
 Planck.Extension.Content.Module.Article.Controller.Edit.prototype.initialize = function()
 {
 
+
+    this.articleEditor = $('.plk-rich-text-input[data-name=content]').data('manager');
 
     this.loadComponents();
 
@@ -69,6 +64,19 @@ Planck.Extension.Content.Module.Article.Controller.Edit.prototype.initialize = f
     this.article.setValue('html', this.$element.find('.plk-rich-text-html-value-container').val());
 
 
+    this.articleEditor.setHeight(
+        ($('#phi-main-container').get(0).offsetHeight-150)+'px'
+    );
+
+
+    this.initializeFeatures();
+
+};
+
+Planck.Extension.Content.Module.Article.Controller.Edit.prototype.initializeFeatures = function()
+{
+
+
     var commonActionFeature = new Planck.Extension.Content.Module.Article.Controller.Edit.Features.CommonAction(this);
     commonActionFeature.initialize();
     this.loadFeature('commonAction', commonActionFeature);
@@ -78,6 +86,13 @@ Planck.Extension.Content.Module.Article.Controller.Edit.prototype.initialize = f
     imageCoverFeature.initialize();
     this.loadFeature('imageCover', imageCoverFeature);
 
+
+
+    var typeFeature = new Planck.Extension.Content.Module.Article.Controller.Edit.Features.Type(this);
+    typeFeature.initialize();
+    this.loadFeature('type', typeFeature);
+
+
     var tagFeature = new Planck.Extension.Content.Module.Article.Controller.Edit.Features.Tag(this);
     tagFeature.initialize();
     this.loadFeature('tag', tagFeature);
@@ -85,10 +100,16 @@ Planck.Extension.Content.Module.Article.Controller.Edit.prototype.initialize = f
     var categoryFeature = new Planck.Extension.Content.Module.Article.Controller.Edit.Features.Category(this);
     categoryFeature.initialize();
     this.loadFeature('category', categoryFeature);
+};
 
 
 
 
+
+Planck.Extension.Content.Module.Article.Controller.Edit.prototype.loadFeature = function(featureName, featureInstance)
+{
+    this.features[featureName] = featureInstance;
+    return this;
 };
 
 

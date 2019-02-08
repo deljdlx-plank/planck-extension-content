@@ -24,7 +24,11 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.CommonAction.pr
 Planck.Extension.Content.Module.Article.Controller.Edit.Features.CommonAction.prototype.saveArticle = function()
 {
     this.article.loadValuesFromForm();
-    this.article.setValue('html', this.$element.find('.plk-rich-text-html-value-container').val());
+    this.article.setValue(
+        'html',
+        this.editor.getElement().find('.plk-rich-text-html-value-container').val()
+    );
+
 
     this.article.store(function(data) {
 
@@ -39,17 +43,6 @@ Planck.inherit(
     Planck.Extension.Content.Module.Article.Controller.Edit.Features.CommonAction,
     Planck.Extension.Content.Module.Article.Controller.Edit.Feature
 );
-
-
-
-
-
-
-
-
-
-
-
 
 
 
