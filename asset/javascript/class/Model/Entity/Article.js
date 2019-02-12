@@ -1,11 +1,14 @@
 Planck.Extension.Content.Model.Entity.Article = function ()
 {
     this.image = new Planck.Extension.Content.Model.Entity.Image();
+
+    this.repository = new Planck.Extension.Content.Model.Repository.Article();
+
 };
 
 
 Planck.Extension.Content.Model.Entity.Article.prototype.image = null;
-
+//Planck.Extension.Content.Model.Entity.Article.prototype.repository =
 
 /**
  *

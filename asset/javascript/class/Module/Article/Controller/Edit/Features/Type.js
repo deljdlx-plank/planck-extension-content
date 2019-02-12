@@ -18,7 +18,7 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.Type.prototype.
 
     this.register('type');
 
-
+    this.ready = false;
 
 };
 
@@ -40,13 +40,17 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.Type.prototype.
         this.tree.selectNodeById(
             this.editor.getArticle().getValue('type_id')
         );
+        this.ready = true;
     }.bind(this));
 
 
     this.tree.on('select', function(data) {
         this.editor.getArticle().setValue('type_id', data.node.id);
         if(this.editor.getArticle().getValue('id')) {
-            this.editor.getArticle().store();
+            if(this.ready) {
+                this.editor.getArticle().store();
+            }
+
         }
     }.bind(this));
 

@@ -5,6 +5,7 @@ namespace Planck\Extension\Content\Model\Entity;
 
 
 use Planck\Extension\Model\Traits\IsPlanckEntity;
+use Planck\Extension\User\Model\Entity\User;
 use Planck\Model\Traits\HasProperties;
 
 
@@ -32,6 +33,13 @@ class Article extends Content
         return $this->getValue('title');
     }
 
+
+    public function setAuthor(User $user)
+    {
+        $this->author = $user;
+        $this->setValue('user_id', $user->getId());
+        return $this;
+    }
 
     public function getAuthor()
     {

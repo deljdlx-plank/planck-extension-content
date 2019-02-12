@@ -6,6 +6,7 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.Category = func
      * {Planck.Extension.ViewComponent.View.Component.EntityTree}
      */
     this.tree;
+    this.ready = false;
 };
 
 
@@ -40,13 +41,16 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.Category.protot
         this.tree.selectNodeById(
             this.editor.getArticle().getValue('category_id')
         );
+        this.ready = true;
     }.bind(this));
 
 
     this.tree.on('select', function(data) {
         this.editor.getArticle().setValue('category_id', data.node.id);
         if(this.editor.getArticle().getValue('id')) {
-            this.editor.getArticle().store();
+            if(this.ready) {
+                this.editor.getArticle().store();
+            }
         }
     }.bind(this));
 

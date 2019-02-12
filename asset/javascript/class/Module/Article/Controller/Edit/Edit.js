@@ -77,9 +77,11 @@ Planck.Extension.Content.Module.Article.Controller.Edit.prototype.initializeFeat
 {
 
 
+
     var commonActionFeature = new Planck.Extension.Content.Module.Article.Controller.Edit.Features.CommonAction(this);
     commonActionFeature.initialize();
     this.loadFeature('commonAction', commonActionFeature);
+
 
 
     var imageCoverFeature = new Planck.Extension.Content.Module.Article.Controller.Edit.Features.ImageCover(this);

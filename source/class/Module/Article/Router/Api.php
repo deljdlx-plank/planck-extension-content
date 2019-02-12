@@ -5,7 +5,9 @@ namespace Planck\Extension\Content\Module\Article\Router;
 
 
 use Planck\Exception;
+use Planck\Extension\Content\Module\Article\Controller\Save;
 use Planck\Extension\RichTag\Model\Repository\Tag;
+use Planck\Extension\ViewComponent\DataLayer;
 use Planck\Router;
 use Planck\Extension\Content\Model\Entity\Article;
 
@@ -68,17 +70,21 @@ class Api extends Router
 
 
             $data = $this->post();
-            $article = $this->application->getModel()->getEntity(Article::class);
-            $article->setValues($data);
 
-            $article->store();
+            $controller = new Save();
+            $article = $controller->execute($data['entity']);
+
 
             $redirection = $this->request->get('redirection');
             if($redirection && !$this->request->data('no-redirection')) {
                 $this->redirect($redirection.'&article='.$article->getId());
             }
             else {
-                echo json_encode($article->getValues());
+
+                $dataLayer = new DataLayer();
+                echo json_encode(
+                    $dataLayer->serializeValue($article)
+                );
             }
 
 
