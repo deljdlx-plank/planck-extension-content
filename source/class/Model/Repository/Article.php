@@ -30,7 +30,65 @@ class Article extends Repository
     }
 
 
-    public function getLasts($number = 16)
+
+    public function getByUserId($userId, $limit = 16)
+    {
+        $query = "
+            SELECT * FROM ".$this->getTableName()."
+            WHERE
+                user_id = :user_id
+            ORDER BY creation_date DESC LIMIT :limit            
+        ";
+
+        return $this->queryAndGetDataset(
+            $query,
+            array(
+                ':user_id' => $userId,
+                ':limit' => $limit
+            )
+        );
+    }
+
+    public function getByCategoryId($categoryId, $limit = 16)
+    {
+        $query = "
+            SELECT * FROM ".$this->getTableName()."
+            WHERE
+                category_id = :category_id
+            ORDER BY creation_date DESC LIMIT :limit            
+        ";
+
+        return $this->queryAndGetDataset(
+            $query,
+            array(
+                ':category_id' => $categoryId,
+                ':limit' => $limit
+            )
+        );
+    }
+
+    public function getByDate($year=null, $month=null, $date=null, $limit = 16)
+    {
+        $query = "
+            SELECT * FROM ".$this->getTableName()."
+            WHERE
+                strftime('%Y', creation_date) = :year
+                AND strftime('%m', creation_date) = :month
+            ORDER BY creation_date DESC LIMIT :limit            
+        ";
+
+        return $this->queryAndGetDataset(
+           $query,
+           array(
+               ':year' => $year,
+               ':month' => $month,
+               ':limit' => $limit
+           )
+        );
+    }
+
+
+    public function getLasts($limit = 16)
     {
         $query = "
             SELECT * FROM ".$this->getTableName()."
@@ -38,7 +96,7 @@ class Article extends Repository
         ";
 
         return $this->queryAndGetDataset($query, array(
-            ':limit' => $number
+            ':limit' => $limit
         ));
     }
 

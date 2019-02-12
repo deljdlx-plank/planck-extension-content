@@ -27,6 +27,35 @@ class Article extends Content
     protected $author;
 
 
+    /**
+     * @var Category
+     */
+    protected $category;
+
+
+    public function getCategory()
+    {
+        $category = $this->getForeignEntity(
+            $this->category,
+            \Planck\Extension\Content\Model\Repository\Category::class,
+            'category_id'
+        );
+        return $category;
+    }
+
+    public function hasCategory()
+    {
+        $category = $this->getCategory();
+        if($category->getId()) {
+            return true;
+        }
+        return false;
+    }
+
+
+
+
+
 
     public function getTitle()
     {
@@ -83,7 +112,6 @@ class Article extends Content
 
     public function loadAll()
     {
-        //die('EXIT '.__FILE__.'@'.__LINE__);
         $this->getImage();
         return $this;
     }
