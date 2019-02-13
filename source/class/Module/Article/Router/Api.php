@@ -8,7 +8,7 @@ use Planck\Exception;
 use Planck\Extension\Content\Module\Article\Controller\Save;
 use Planck\Extension\RichTag\Model\Repository\Tag;
 use Planck\Extension\ViewComponent\DataLayer;
-use Planck\Router;
+use Planck\Routing\Router;
 use Planck\Extension\Content\Model\Entity\Article;
 
 

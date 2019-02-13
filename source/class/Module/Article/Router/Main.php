@@ -5,7 +5,7 @@ namespace Planck\Extension\Content\Module\Article\Router;
 
 
 use Phi\HTML\JavascriptFile;
-use Planck\Router;
+use Planck\Routing\Router;
 use Planck\Extension\Content\Model\Entity\Article;
 use Planck\Extension\Content\Module\Article\View\Component\ArticleEditor;
 use Planck\Extension\Content\Module\Article\View\Component\Listing;

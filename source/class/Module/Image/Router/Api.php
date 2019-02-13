@@ -9,7 +9,7 @@ use Planck\Extension\Content\Model\Entity\Image;
 use Planck\Extension\Content\Module\Image\Controller\Save;
 use Planck\Extension\RichTag\Model\Entity\Tag;
 use Planck\Extension\ViewComponent\DataLayer;
-use Planck\Router;
+use Planck\Routing\Router;
 
 
 

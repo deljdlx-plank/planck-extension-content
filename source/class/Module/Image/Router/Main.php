@@ -6,7 +6,7 @@ namespace Planck\Extension\Content\Module\Image\Router;
 
 
 use Planck\Extension\Content\Module\Image\View\Component\Gallery;
-use Planck\Router;
+use Planck\Routing\Router;
 
 
 class Main extends Router
