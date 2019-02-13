@@ -27,7 +27,9 @@ class Main extends Router
         $this->get('content/article/edit', '`/content/article/edit`', function() {
 
 
-            $assets = $this->router->getAssets();
+            //$assets = $this->router->getAssets();
+
+            $assets = [];
 
 
             $javascriptBootstrap = $this->router->getExtension()->getExtensionJavascript('/javascript/bootstrap/articleEdit.js');
