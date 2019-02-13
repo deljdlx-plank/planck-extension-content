@@ -21,12 +21,6 @@ class Main extends Router
 
         $this->get('list', '`/images`', function() {
 
-            /*
-            $javascriptBootstrap = $this->getLocalJavascriptFile(
-                $this->router->getExtension()->getJavascriptsFilepath().'/bootstrap/imageList.js'
-            );
-            $assets[] = $javascriptBootstrap;
-            */
 
             $images = $this->application->getModel()->getRepository(
                 \Planck\Extension\Content\Model\Repository\Image::class
@@ -37,9 +31,6 @@ class Main extends Router
             $view->setImages($images);
             $output = $view->render();
 
-
-            $assets = $this->router->getAssets();
-            $this->response->addExtraData('resources', $assets);
 
             echo $output;
 
