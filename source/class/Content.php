@@ -12,11 +12,7 @@ class Content extends Extension
 
     public function __construct(Application $application)
     {
-        parent::__construct($application, 'Planck\Extension\Content', __DIR__.'/../..');
-
-
-        //$entityEditorExtension =
-
+        parent::__construct($application);
 
     }
 

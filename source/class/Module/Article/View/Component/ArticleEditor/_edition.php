@@ -24,7 +24,7 @@
                 <div class="col-12">
 
                     <?php
-                    $contentInput = new \Planck\Extension\Redactor\View\Component\RichTextInput();
+                    $contentInput = new \Planck\Extension\FormComponent\View\Component\RichTextInput();
                     $contentInput->setValue($article->getValue('content'));
                     $contentInput->setName('content');
                     echo $contentInput->render();

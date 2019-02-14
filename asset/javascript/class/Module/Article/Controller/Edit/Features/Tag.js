@@ -33,7 +33,7 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.Tag.prototype.i
         this.$element = this.getContainer('Tags', 'tag_input_container');
         this.$element.find('.tag_input_container').append(tagInputElement);
 
-        this.$tagManager = new Planck.Extension.Redactor.View.FormElement.TagInput(tagInputElement);
+        this.$tagManager = new Planck.Extension.FormComponent.View.Component.TagInput(tagInputElement);
         this.$tagManager.initialize();
 
         this.$tagManager.on('change', function(tagManager) {
