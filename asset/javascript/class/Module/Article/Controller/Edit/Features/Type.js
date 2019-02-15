@@ -24,16 +24,9 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.Type.prototype.
 
 Planck.Extension.Content.Module.Article.Controller.Edit.Features.Type.prototype.initializeTree = function()
 {
-    var options = {
-        sourceURL: '?/type/api/get-tree',
-        createNodeURL: '?/type/api/save',
-        renameNodeURL: '?/type/api/save',
-        moveNodeURL: '?/type/api/move',
-        deleteURL: '?/type/api/delete',
-        deleteBranchURL: '?/type/api/delete-branch',
-    };
 
-    this.tree = new Planck.Extension.ViewComponent.View.Component.EntityTree(options)
+    this.typeSelector = new Planck.Extension.Content.View.Component.TypeTree();
+    this.tree = this.typeSelector.getTree();
 
 
     this.tree.on('load', function() {
@@ -57,6 +50,10 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.Type.prototype.
     this.tree.render(
         this.$element.find('.type_input_container')
     );
+
+    return this.typeSelector;
+
+
 };
 
 
