@@ -57,7 +57,7 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.initializ
 
 Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.getRemoteCallInstance = function()
 {
-    var remoteCall = new Planck.Extension.ViewComponent.ComponentRemoteCall('Planck.Extension.Content.Module.Image.View.Component.Gallery');
+    var remoteCall = new Planck.Extension.ViewComponent.RemoteComponentLoader('Planck.Extension.Content.Module.Image.View.Component.Gallery');
     remoteCall.addData('dataLayer', this.getDataLayer().serialize());
     return remoteCall;
 

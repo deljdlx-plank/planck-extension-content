@@ -64,7 +64,7 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.ImageCover.prot
             parameters: null
         });
 
-        remoteCall.execute(function (descriptor) {
+        remoteCall.load(function (descriptor) {
 
             var dom = $(descriptor.getHTML());
             imageList.setElement(dom);

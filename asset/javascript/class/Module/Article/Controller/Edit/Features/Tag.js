@@ -26,7 +26,7 @@ Planck.Extension.Content.Module.Article.Controller.Edit.Features.Tag.prototype.i
         ]
     );
 
-    loader.execute(function(response) {
+    loader.load(function(response) {
 
         var tagInputElement = $(response.html);
 

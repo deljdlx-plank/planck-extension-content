@@ -36,11 +36,7 @@ tr.plk-field-container th .button span:before {
     margin-right: 4px;
 }
 
-
-
-
-
-.plk-entity-chooser-preview img {
+.plk-entity-selector-preview img {
     max-height: 150px;
 }
 

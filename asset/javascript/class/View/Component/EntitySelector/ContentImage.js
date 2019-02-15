@@ -81,7 +81,7 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentImage.prototype.sh
         parameters: null
     });
 
-    remoteCall.execute(function (descriptor) {
+    remoteCall.load(function (descriptor) {
 
         var dom = $(descriptor.getHTML());
         imageList.setElement(dom);
