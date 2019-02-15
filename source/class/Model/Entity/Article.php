@@ -33,6 +33,14 @@ class Article extends Content
     protected $category;
 
 
+    protected $foreignKeys = array(
+       'image_id' => Image::class,
+        'user_id' => User::class,
+        'category_id' => Category::class,
+        'type_id' => Type::class,
+    );
+
+
     public function getCategory()
     {
         $category = $this->getForeignEntity(

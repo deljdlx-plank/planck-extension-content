@@ -9,11 +9,15 @@ CREATE TABLE content_article
 
     status INT,
     title VARCHAR(255),
-    image VARCHAR(255),
+
     presentation TEXT,
     content TEXT,
     html TEXT,
     properties TEXT,
+
+    publication_date DATETIME,
+    edition_date DATETIME,
+
     creation_date DATETIME,
     update_date DATETIME
 
