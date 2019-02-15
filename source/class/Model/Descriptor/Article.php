@@ -7,5 +7,6 @@ use Planck\Model\EntityDescriptor;
 class Article extends EntityDescriptor
 {
 
+
 }
 

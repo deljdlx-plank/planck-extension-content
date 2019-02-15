@@ -34,7 +34,7 @@ class Article extends Content
 
 
     protected $foreignKeys = array(
-       'image_id' => Image::class,
+        'image_id' => Image::class,
         'user_id' => User::class,
         'category_id' => Category::class,
         'type_id' => Type::class,

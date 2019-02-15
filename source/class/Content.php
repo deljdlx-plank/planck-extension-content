@@ -5,6 +5,7 @@ namespace Planck\Extension;
 
 use Planck\Application\Application;
 use Planck\Application\Extension;
+use Planck\Extension\FrontVendor\Package\JQueryUI;
 use Planck\Extension\FrontVendor\Package\Tree;
 
 class Content extends Extension
@@ -18,7 +19,9 @@ class Content extends Extension
         $this->addFrontPackage(
            new Tree()
         );
-
+        $this->addFrontPackage(
+            new JQueryUI()
+        );
     }
 
 
