@@ -5,7 +5,7 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentImage = function(t
 
     this.$label = this.getLabel();
 
-    this.$label.html(i18n('<div class="button"><span>Image</span></div>'));
+    this.$label.html(i18n('<div class="button" data-behaviour="interactive"><span>Image</span></div>'));
 
     this.imageId = this.$triggerElement.attr('value');
 

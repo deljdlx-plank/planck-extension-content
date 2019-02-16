@@ -8,5 +8,10 @@ class Article extends EntityDescriptor
 {
 
 
+    public function getEntityLabel()
+    {
+        return 'Article';
+    }
+
 }
 

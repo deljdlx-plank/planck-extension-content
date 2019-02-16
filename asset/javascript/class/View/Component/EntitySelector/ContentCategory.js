@@ -8,7 +8,7 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentCategory = functio
     this.$label = this.getLabel();
 
 
-    this.$label.html(i18n('<div class="button"><span>Catégorie</span></div>'));
+    this.$label.html(i18n('<div class="button"data-behaviour="interactive" ><span>Catégorie</span></div>'));
 
 
 

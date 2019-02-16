@@ -6,7 +6,7 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentType = function(tr
     this.$label = this.getLabel();
 
 
-    this.$label.html(i18n('<div class="button"><span>Type</span></div>'));
+    this.$label.html(i18n('<div class="button" data-behaviour="interactive"><span>Type</span></div>'));
 
 
 
