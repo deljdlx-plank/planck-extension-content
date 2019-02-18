@@ -30,6 +30,17 @@ class Article extends Repository
     }
 
 
+    public function search($search, $offset = null, $limit = null, &$totalRows = null)
+    {
+        $query = "
+            SELECT * FROM ".$this->getTableName()."
+            WHERE title LIKE :search
+        ";
+
+        return $this->getSegmentByQuery($query, array(':search' => '%'.$search.'%'), $offset, $limit, $totalRows);
+
+    }
+
 
     public function getByUserId($userId, $limit = 16)
     {
