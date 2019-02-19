@@ -49,7 +49,7 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentCategory.prototype
         data: data,
         success: function(response) {
 
-            this.setPreview(response.name);
+            this.setPreview(response.values.name);
 
         }.bind(this)
     });

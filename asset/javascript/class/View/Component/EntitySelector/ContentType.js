@@ -48,7 +48,7 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentType.prototype.loa
         data: data,
         success: function(response) {
 
-            this.setPreview(response.name);
+            this.setPreview(response.values.name);
 
         }.bind(this)
     });

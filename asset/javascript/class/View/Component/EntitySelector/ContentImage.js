@@ -40,7 +40,7 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentImage.prototype.lo
        method: 'get',
        data: data,
        success: function(response) {
-           this.setPreview(response.url);
+           this.setPreview(response.values.url);
             //console.log(response);
        }.bind(this)
    });
