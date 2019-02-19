@@ -8,7 +8,8 @@ Planck.Extension.Content.Model.Entity.Article = function ()
 
 
 Planck.Extension.Content.Model.Entity.Article.prototype.image = null;
-//Planck.Extension.Content.Model.Entity.Article.prototype.repository =
+
+
 
 /**
  *

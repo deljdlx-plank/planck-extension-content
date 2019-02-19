@@ -8,6 +8,7 @@ namespace Planck\Extension\Content\Model\Repository;
 use Phi\Model\Entity;
 use Planck\Helper\StringUtil;
 use Planck\Model\Repository;
+use Planck\Model\Segment;
 
 class Article extends Repository
 {
@@ -30,15 +31,15 @@ class Article extends Repository
     }
 
 
-    public function search($search, $offset = null, $limit = null, &$totalRows = null)
+    public function search($search, array &$fields = null, $offset = null, $limit = null, Segment &$segment = null)
     {
-        $query = "
-            SELECT * FROM ".$this->getTableName()."
-            WHERE title LIKE :search
-        ";
-
-        return $this->getSegmentByQuery($query, array(':search' => '%'.$search.'%'), $offset, $limit, $totalRows);
-
+        if($fields === null) {
+            $fields = [
+                'id',
+                'title'
+            ];
+        }
+        return parent::search($search, $fields, $offset, $limit, $segment);
     }
 
 
