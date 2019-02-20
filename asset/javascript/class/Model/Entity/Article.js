@@ -1,8 +1,9 @@
 Planck.Extension.Content.Model.Entity.Article = function ()
 {
     this.image = new Planck.Extension.Content.Model.Entity.Image();
-
     this.repository = new Planck.Extension.Content.Model.Repository.Article();
+
+    this.entityType = 'Planck.Extension.Content.Model.Entity.Article';
 
 };
 

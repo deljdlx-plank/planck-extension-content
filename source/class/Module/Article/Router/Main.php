@@ -27,17 +27,10 @@ class Main extends Router
         $this->get('content/article/edit', '`/content/article/edit`', function() {
 
 
-            $assets = [];
-
-
-            $javascriptBootstrap = $this->router->getExtension()->getExtensionJavascript('/javascript/bootstrap/articleEdit.js');
-
-
-
-            $assets[] = $javascriptBootstrap;
-
-
-            $this->response->addExtraData('resources', $assets);
+            //$assets = [];
+            //$javascriptBootstrap = $this->router->getExtension()->getExtensionJavascript('/javascript/bootstrap/articleEdit.js');
+            //$assets[] = $javascriptBootstrap;
+            //$this->response->addExtraData('resources', $assets);
 
 
             $component = new ArticleEditor();

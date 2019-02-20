@@ -81,7 +81,7 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentType.prototype.sho
 
         this.setPreview(data.node.text);
         floatingBox.destroy();
-        
+
     }.bind(this));
 
 

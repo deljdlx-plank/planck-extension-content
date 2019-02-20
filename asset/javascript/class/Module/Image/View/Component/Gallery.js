@@ -95,6 +95,7 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.showImage
 {
 
 
+
     var imageDetail = new Planck.Extension.Content.Module.Image.View.Component.Detail();
 
 

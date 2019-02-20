@@ -1,6 +1,6 @@
 Planck.Extension.Content.Model.Entity.Image = function ()
 {
-
+    this.entityType = 'Planck.Extension.Content.Model.Entity.Image';
 };
 
 

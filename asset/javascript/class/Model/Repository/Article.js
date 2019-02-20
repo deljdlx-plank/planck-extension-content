@@ -12,10 +12,7 @@ Planck.Extension.Content.Model.Repository.Article.prototype.services = {
         url: '?/tool/route/call&route=/content/article/api[save]',
         method: 'post'
     },
-    delete: {
-        url: '?/tool/route/call&route=/entity-editor/entity/api[delete]',
-        method: 'delete'
-    }
+    delete: Planck.Model.Repository.prototype.services.delete
 };
 
 
