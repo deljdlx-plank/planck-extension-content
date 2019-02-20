@@ -1,12 +1,12 @@
 Planck.Extension.Content.View.Component.CategoryTree = function()
 {
     var options = {
-        sourceURL: '?/category/api/get-tree',
-        createNodeURL: '?/category/api/save',
-        renameNodeURL: '?/category/api/save',
-        moveNodeURL: '?/category/api/move',
-        deleteURL: '?/category/api/delete',
-        deleteBranchURL: '?/category/api/delete-branch',
+        sourceURL: '?/content/category/api/get-tree',
+        createNodeURL: '?/content/category/api/save',
+        renameNodeURL: '?/content/category/api/save',
+        moveNodeURL: '?/content/category/api/move',
+        deleteURL: '?/content/category/api/delete',
+        deleteBranchURL: '?/content/category/api/delete-branch',
     };
 
     this.tree = new Planck.Extension.ViewComponent.View.Component.EntityTree(options)
