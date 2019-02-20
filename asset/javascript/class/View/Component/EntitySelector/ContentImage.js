@@ -26,6 +26,8 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentImage = function(t
 
 Planck.Extension.Content.View.Component.EntitySelector.ContentImage.prototype.loadPreview = function(imageId)
 {
+
+
    if(!imageId) {
        return false;
    }

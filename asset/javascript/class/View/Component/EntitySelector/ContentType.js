@@ -63,10 +63,13 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentType.prototype.set
 
 Planck.Extension.Content.View.Component.EntitySelector.ContentType.prototype.showCategorySelector = function()
 {
-    var overlay = new Planck.Extension.ViewComponent.View.Component.Overlay();
-    overlay.render(document.body);
 
     var $content = $('<div class="category-tree-container"></div>')
+
+    var floatingBox = new Planck.Extension.ViewComponent.View.Component.FloatingBox(
+        this.$label,
+        $content
+    );
 
 
     this.tree = new Planck.Extension.Content.View.Component.TypeTree();
@@ -77,12 +80,12 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentType.prototype.sho
         this.$valueInput.val(typeId);
 
         this.setPreview(data.node.text);
-
-        overlay.destroy();
+        floatingBox.destroy();
+        
     }.bind(this));
 
 
-    overlay.show($content);
+    floatingBox.show();
 };
 
 

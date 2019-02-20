@@ -65,27 +65,26 @@ Planck.Extension.Content.View.Component.EntitySelector.ContentCategory.prototype
 
 Planck.Extension.Content.View.Component.EntitySelector.ContentCategory.prototype.showCategorySelector = function()
 {
-    var overlay = new Planck.Extension.ViewComponent.View.Component.Overlay();
-    overlay.render(document.body);
 
     var $content = $('<div class="category-tree-container"></div>')
 
+    var floatingBox = new Planck.Extension.ViewComponent.View.Component.FloatingBox(
+        this.$label,
+        $content
+    );
 
     this.tree = new Planck.Extension.Content.View.Component.CategoryTree();
     this.tree.render($content);
-
     this.tree.getTree().on('select', function(data) {
         var categoryId = data.node.id;
 
         this.$valueInput.val(categoryId);
         this.setPreview(data.node.text);
-        //this.$previewContainer.html(data.node.text);
-
-        overlay.destroy();
+        floatingBox.destroy();
     }.bind(this));
 
+    floatingBox.show();
 
-    overlay.show($content);
 };
 
 
