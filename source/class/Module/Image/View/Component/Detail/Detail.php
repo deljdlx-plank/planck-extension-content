@@ -40,7 +40,8 @@ class Detail extends JavascriptComponent
     public function getContent()
     {
 
-        $saveURL = $this->buildURL('Api', 'save-info').'&redirect='.$this->buildURL('Main', 'list');
+        $saveURL = $this->buildURL('Api', 'save-info');
+        //'&redirect='.$this->buildURL('Main', 'list')
 
 
         $this->dom->html(

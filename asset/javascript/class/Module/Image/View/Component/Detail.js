@@ -87,12 +87,18 @@ Planck.Extension.Content.Module.Image.View.Component.Detail.prototype.initialize
     if(this.cropper) {
         this.form.on('beforeSubmit', function() {
             this.form.addData('crop', this.getCropData());
+
             return true;
         }.bind(this));
     }
 
 
+
     this.form.on('afterSubmit', function(dataLayer) {
+
+
+        console.log(dataLayer);
+
         this.loadDataLayer(dataLayer);
         this.events.afterSubmit(this);
     }.bind(this));

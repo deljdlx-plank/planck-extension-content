@@ -83,8 +83,6 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.getViewFr
         }.bind(this)
     );
 
-    //remoteCall.addData({})
-    //removeCall.execute();
 
 };
 
@@ -93,7 +91,6 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.getViewFr
 
 Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.showImageDetails = function(thumbnail)
 {
-
 
 
     var imageDetail = new Planck.Extension.Content.Module.Image.View.Component.Detail();
@@ -107,6 +104,7 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.showImage
 
 
     imageDetail.getViewFromRemote(function() {
+
         this.overlay.show(imageDetail.getElement());
     }.bind(this));
 

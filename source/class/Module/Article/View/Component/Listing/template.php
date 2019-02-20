@@ -14,7 +14,7 @@ echo '</div>';
 foreach ($articles as $article) {
 
     echo '<article>';
-        echo '<div>';
+        echo '<div class="title">';
             echo $article->getValue('title');
         echo '</div>';
         echo '<div>';
