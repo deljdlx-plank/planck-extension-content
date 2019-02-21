@@ -7,7 +7,7 @@ namespace Planck\Extension\Content\Model\Entity;
 use Planck\Extension\Model\Traits\IsPlanckEntity;
 use Planck\Extension\User\Model\Entity\User;
 use Planck\Model\Traits\HasProperties;
-
+use Planck\Model\Traits\HasSlug;
 
 
 class Article extends Content
@@ -15,6 +15,7 @@ class Article extends Content
 
     use IsPlanckEntity;
     use HasProperties;
+    use HasSlug;
 
     /**
      * @var Image
