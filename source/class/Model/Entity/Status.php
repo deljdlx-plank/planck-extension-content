@@ -12,7 +12,10 @@ use Planck\Model\Traits\HasProperties;
 
 class Status extends \Planck\Extension\StatusManager\Model\Entity\Status
 {
-
+    protected $foreignKeys = array(
+        'nextstatus_id' => Status::class,
+        'previousstatus_id' => Status::class,
+    );
 
 }
 
