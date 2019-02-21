@@ -23,9 +23,12 @@ class Save extends Controller
 
         $article = $this->application->getModel()->getEntity(Article::class);
 
-        if(array_key_exists('id', $data)) {
-            if((int) $data['id']) {
-                $article->loadById($data['id']);
+
+        $values = $data['values'];
+
+        if(array_key_exists('id', $values)) {
+            if((int) $values['id']) {
+                $article->loadById($values['id']);
 
                 if($article->getAuthor()->getId()) {
                     if($article->getAuthor()->getId() != $user->getId()) {
@@ -38,12 +41,9 @@ class Save extends Controller
 
 
 
-        $article->setValues($data);
+        $article->setValues($values);
         $article->setAuthor($user);
-
         $article->store();
-
-
         return $article;
 
     }
