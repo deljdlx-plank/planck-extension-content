@@ -26,10 +26,9 @@ class Main extends Router
             $view = new StatusEditor();
             $view->setRepository($statusRepository);
             echo $view->render();
-
-            //echo 'hello world';
-
-        })->html();
+        })->html()
+        ->setBuilder('/content/status/index')
+        ;
 
 
     }
