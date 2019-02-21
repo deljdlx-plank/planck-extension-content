@@ -39,6 +39,7 @@ class Article extends Content
         'user_id' => User::class,
         'category_id' => Category::class,
         'type_id' => Type::class,
+        'status' => Status::class
     );
 
 
