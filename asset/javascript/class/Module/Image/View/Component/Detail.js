@@ -37,12 +37,17 @@ Planck.Extension.Content.Module.Image.View.Component.Detail.prototype.getRemoteC
 
 Planck.Extension.Content.Module.Image.View.Component.Detail.prototype.getViewFromRemote = function(callback)
 {
+
     this.parent.getViewFromRemote.call(
         this,
 
         'Planck.Extension.Content.Module.Image.View.Component.Detail',
         null,
         function(descriptor) {
+
+
+
+
             this.initializeCropper();
             this.initializeForm();
 

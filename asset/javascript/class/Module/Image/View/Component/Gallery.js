@@ -104,7 +104,6 @@ Planck.Extension.Content.Module.Image.View.Component.Gallery.prototype.showImage
 
 
     imageDetail.getViewFromRemote(function() {
-
         this.overlay.show(imageDetail.getElement());
     }.bind(this));
 

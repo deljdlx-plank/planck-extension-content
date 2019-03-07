@@ -27,11 +27,6 @@ class Main extends Router
         $this->get('content/article/edit', '`/content/article/edit`', function() {
 
 
-            //$assets = [];
-            //$javascriptBootstrap = $this->router->getExtension()->getExtensionJavascript('/javascript/bootstrap/articleEdit.js');
-            //$assets[] = $javascriptBootstrap;
-            //$this->response->addExtraData('resources', $assets);
-
 
             $component = new ArticleEditor();
             if($articleId = (int) $this->request->get('article')) {
@@ -42,13 +37,21 @@ class Main extends Router
             echo $component->render();
 
         })->html()
-        ->setBuilder(function($articleId = false) {
+        ->setBuilder(function(int $articleId = null) {
             $url = '/content/article/edit';
             if($articleId) {
                 $url .= '&article='.$articleId;
             }
             return $url;
-        });
+        })
+            ->setBuilder(function(Article $article = null) {
+                $url = '/content/article/edit';
+                if($article) {
+                    $url .= '&article='.$article->getId();
+                }
+                return $url;
+            })
+        ;
 
 
         $this->get('list', '`/articles`', function() {
